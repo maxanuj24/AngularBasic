@@ -1,0 +1,24 @@
+<div class="header-top">
+  student does not works!
+  <h2>id : {{s1.id}}</h2>
+  <h2>Name : {{s1.name}}</h2>
+  <h2>Email : {{s1.email}}</h2>
+  <h2>Contact Number : {{s1.contactno}}</h2>
+  <h2>City : {{s1.city}}</h2>
+  <button class="{{btnClassCss}}" [disabled]="isDisabled" (click)="validateButton()">{{btnText}}</button>
+  
+  <input type="text" [value]="username">
+</div>
+<!-- <button class="btn btn-success" (click)="showCards">Show cards</button> -->
+<div class="student-container">  
+   <!-- *ngIf="showUsers"> -->
+  <div class="card" *ngFor="let stud of studentList" [ngSwitch]="stud.city">
+    <h2 class="card-id">{{stud.id}}</h2>
+    <h1 class="card-name">{{stud.name}}</h1>
+    <h2 class="card-email">{{stud.email}}</h2>
+    <h2 class="card-contactno">{{stud.contactno}}</h2>
+    <h2 class="card-city" *ngSwitchCase='"Jaipur"'>{{stud.city}}</h2>
+    <h2 class="card-city" *ngSwitchCase='"Gurgaon"'>{{stud.city}}</h2>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div> 
+</div>
